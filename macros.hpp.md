@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/graph/lca.aoj_GRL_5_C.test.cpp
+    title: test/graph/lca.aoj_GRL_5_C.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/union_find.aoj.test.cpp
     title: test/union_find.aoj.test.cpp
   _isVerificationFailed: false
@@ -27,6 +30,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/union_find.aoj.test.cpp
+  - test/graph/lca.aoj_GRL_5_C.test.cpp
 documentation_of: macros.hpp
 layout: document
 redirect_from:

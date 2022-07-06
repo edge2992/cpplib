@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: graph/lca.hpp
+      title: LCA (Lowerst Common Ancestor)
   - name: .
     pages:
     - icon: ':heavy_check_mark:'
@@ -14,6 +19,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/mint.hpp
       title: mod int
+  - name: segmentTree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: segmentTree/rangeMin.hpp
+      title: Range Minimum Query
   - name: structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -36,5 +46,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/union_find.aoj.test.cpp
       title: test/union_find.aoj.test.cpp
+  - name: test/graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/graph/lca.aoj_GRL_5_C.test.cpp
+      title: test/graph/lca.aoj_GRL_5_C.test.cpp
+  - name: test/segmentTree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/segmentTree/rangeMin.aoj_DSL_2_A.test.cpp
+      title: test/segmentTree/rangeMin.aoj_DSL_2_A.test.cpp
 layout: toppage
 ---
