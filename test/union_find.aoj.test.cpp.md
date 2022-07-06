@@ -6,7 +6,7 @@ data:
     title: macros.hpp
   - icon: ':heavy_check_mark:'
     path: structure/unionFind.hpp
-    title: Union-Find
+    title: Union Find
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -21,13 +21,12 @@ data:
     https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A\"\n#include\
     \ <iostream>\n\n#line 2 \"macros.hpp\"\n#define rep(i, n) for (int i = 0; i <\
     \ (n); i++)\n#line 1 \"structure/unionFind.hpp\"\n\n\n#include <algorithm>\n#include\
-    \ <vector>\n\n/**\n * @brief Union-Find\n * @docs docs/unionFind.md\n */\nstruct\
-    \ UnionFind {\n  std::vector<int> data;\n  UnionFind() = default;\n\n  explicit\
-    \ UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int a, int b) {\n   \
-    \ a = find(a);\n    b = find(b);\n    if (a == b) return false;\n    if (data[a]\
-    \ < data[b]) std::swap(a, b);\n    data[a] += data[b];\n    data[b] = a;\n   \
-    \ return true;\n  }\n\n  int find(int a) {\n    if (data[a] < 0) return a;\n \
-    \   return data[a] = find(data[a]);\n  }\n\n  int same(int a, int b) { return\
+    \ <vector>\n\nstruct UnionFind {\n  std::vector<int> data;\n  UnionFind() = default;\n\
+    \n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int a, int\
+    \ b) {\n    a = find(a);\n    b = find(b);\n    if (a == b) return false;\n  \
+    \  if (data[a] < data[b]) std::swap(a, b);\n    data[a] += data[b];\n    data[b]\
+    \ = a;\n    return true;\n  }\n\n  int find(int a) {\n    if (data[a] < 0) return\
+    \ a;\n    return data[a] = find(data[a]);\n  }\n\n  int same(int a, int b) { return\
     \ find(a) == find(b); }\n\n  int size(int k) { return -data[find(k)]; }\n\n  std::vector<std::vector<int>>\
     \ groups() {\n    int n = (int)data.size();\n    std::vector<std::vector<int>>\
     \ ret(n);\n    for (int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n\
@@ -50,7 +49,7 @@ data:
   isVerificationFile: true
   path: test/union_find.aoj.test.cpp
   requiredBy: []
-  timestamp: '2022-07-06 08:44:39+09:00'
+  timestamp: '2022-07-06 09:19:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/union_find.aoj.test.cpp
