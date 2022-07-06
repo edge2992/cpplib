@@ -51,6 +51,7 @@ struct Graph {
       }
     }
   }
+  inline vector<Edge<T>> &operator[](const int &k) { return g[k]; }
 
   inline const vector<Edge<T>> &operator[](const int &k) const {
     return g[k];
