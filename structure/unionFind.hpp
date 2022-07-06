@@ -3,10 +3,6 @@
 #include <algorithm>
 #include <vector>
 
-/**
- * @brief Union-Find
- * @docs docs/unionFind.md
- */
 struct UnionFind {
   std::vector<int> data;
   UnionFind() = default;
