@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: math/comb.hpp
-    title: math/comb.hpp
+    title: "combination mod \u7D44\u307F\u5408\u308F\u305B"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/comb.aoj_DPL_5_E.test.cpp
@@ -61,8 +61,9 @@ data:
   - test/comb.aoj_DPL_5_E.test.cpp
 documentation_of: math/mint.hpp
 layout: document
-redirect_from:
-- /library/math/mint.hpp
-- /library/math/mint.hpp.html
-title: math/mint.hpp
+title: mod int
 ---
+
+## Mint
+
+- 自動で mod を取る整数型

@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: math/mint.hpp
-    title: math/mint.hpp
+    title: mod int
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -55,8 +55,6 @@ data:
   - test/comb.aoj_DPL_5_E.test.cpp
 documentation_of: math/comb.hpp
 layout: document
-redirect_from:
-- /library/math/comb.hpp
-- /library/math/comb.hpp.html
-title: math/comb.hpp
+title: "combination mod \u7D44\u307F\u5408\u308F\u305B"
 ---
+

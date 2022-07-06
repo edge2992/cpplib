@@ -10,10 +10,10 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: math/comb.hpp
-      title: math/comb.hpp
+      title: "combination mod \u7D44\u307F\u5408\u308F\u305B"
     - icon: ':heavy_check_mark:'
       path: math/mint.hpp
-      title: math/mint.hpp
+      title: mod int
   - name: structure
     pages:
     - icon: ':heavy_check_mark:'
