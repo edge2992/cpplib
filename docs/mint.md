@@ -1,6 +1,8 @@
 ---
-title: Modint 自動でmodを取る整数型
-documentation_of: structure/modint.hpp
+title: mod int
+documentation_of: math/mint.hpp
 ---
 
-## Modint 自動で mod を取る整数型
+## Mint
+
+- 自動で mod を取る整数型
