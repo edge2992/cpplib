@@ -1,5 +1,4 @@
-#ifndef COMB_HPP
-#define COMB_HPP
+#pragma once
 #include <iostream>
 #include <vector>
 #include "./mint.hpp"
@@ -18,4 +17,3 @@ struct combination {
     return fact[n] * ifact[k] * ifact[n - k];
   }
 };
-#endif

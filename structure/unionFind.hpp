@@ -1,5 +1,4 @@
-#ifndef UNION_FIND_HPP
-#define UNION_FIND_HPP
+#pragma once
 #include <algorithm>
 #include <vector>
 
@@ -40,4 +39,3 @@ struct UnionFind {
     return ret;
   }
 };
-#endif

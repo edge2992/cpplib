@@ -1,5 +1,4 @@
-#ifndef MODINT_HPP
-#define MODINT_HPP
+#pragma once
 #include<iostream>
 using namespace std;
 const int mod = 1000000007;
@@ -39,4 +38,3 @@ mint pow(mint a, long long b){
 }
 istream& operator>>(istream& is, mint& a) { return is >> a.x; }
 ostream& operator<<(ostream& os, const mint& a) { return os << a.x; }
-#endif

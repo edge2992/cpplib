@@ -1,5 +1,4 @@
-#ifndef GRAPH_TEMPLATE_HPP
-#define GRAPH_TEMPLATE_HPP
+#pragma once
 #include <vector>
 using namespace std;
 
@@ -57,5 +56,3 @@ struct Graph {
     return g[k];
   }
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef RANGE_MIN_HPP
-#define RANGE_MIN_HPP
+#pragma once
 #include<vector>
 #include<algorithm>
 using namespace std;
@@ -29,4 +28,3 @@ class rangeMin {
   }
   long long query(int l, int r) { return query_(l, r, 0, size_, 1); }
 };
-#endif

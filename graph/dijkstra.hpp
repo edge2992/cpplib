@@ -1,5 +1,4 @@
-#ifndef DIJKSTRA_HPP
-#define DIJKSTRA_HPP
+#pragma once
 #include <limits>
 #include <queue>
 #include <vector>
@@ -40,4 +39,3 @@ ShortestPath<T> dikstra(const Graph<T> &g, int s) {
   }
   return sp;
 };
-#endif

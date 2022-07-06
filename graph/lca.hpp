@@ -1,5 +1,4 @@
-#ifndef LCA_HPP
-#define LCA_HPP
+#pragma once
 #include<vector>
 using namespace std;
 using Graph = vector<vector<int>>;
@@ -59,4 +58,3 @@ struct LCA{
     return dist[u] + dist[v] - 2 * dist[p];
   }
 };
-#endif
