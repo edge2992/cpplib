@@ -11,7 +11,7 @@ int main(){
     cin >> N >> E >> R;
     Graph<long long> G(N);
     G.read(E, 0, true, true);
-    ShortestPath<long long> sp = dikstra(G, R);
+    ShortestPath<long long> sp = dijkstra(G, R);
     const long long INF = numeric_limits<long long>::max();
     rep(i, N){
         if (sp.dist[i] == INF) {

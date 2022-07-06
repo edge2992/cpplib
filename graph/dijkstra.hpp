@@ -14,7 +14,7 @@ struct ShortestPath {
 };
 
 template <typename T>
-ShortestPath<T> dikstra(const Graph<T> &g, int s) {
+ShortestPath<T> dijkstra(const Graph<T> &g, int s) {
   ShortestPath<T> sp;
   const auto INF = numeric_limits<T>::max();
   sp.dist.resize(g.size(), INF);
