@@ -4,8 +4,17 @@ data:
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
+      path: graph/dijkstra.hpp
+      title: "Dijkstra (\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF)"
+    - icon: ':heavy_check_mark:'
+      path: graph/graphTemplate.hpp
+      title: graph/graphTemplate.hpp
+    - icon: ':heavy_check_mark:'
       path: graph/lca.hpp
       title: LCA (Lowerst Common Ancestor)
+    - icon: ':heavy_check_mark:'
+      path: graph/scc.hpp
+      title: SCC (Sstrongly Connected Components)
   - name: .
     pages:
     - icon: ':heavy_check_mark:'
@@ -49,8 +58,14 @@ data:
   - name: test/graph
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/graph/dijkstra.aoj_GRL_1_A.test.cpp
+      title: test/graph/dijkstra.aoj_GRL_1_A.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/graph/lca.aoj_GRL_5_C.test.cpp
       title: test/graph/lca.aoj_GRL_5_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/scc.aoj_GRL_3_C.test.cpp
+      title: test/graph/scc.aoj_GRL_3_C.test.cpp
   - name: test/segmentTree
     pages:
     - icon: ':heavy_check_mark:'
