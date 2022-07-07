@@ -1,13 +1,11 @@
-#ifndef SCC_HPP
-#define SCC_HPP
+#pragma once
 #include <algorithm>
 #include <unordered_map>
 #include <vector>
 
 #include "graph/graphTemplate.hpp"
 using namespace std;
-// 強連結成分分解 Strongly Connected Component
-// https://pione.hatenablog.com/entry/2021/03/11/232159
+
 template <typename T = int>
 struct SCC {
 public:
@@ -71,4 +69,3 @@ private:
     }
   }
 };
-#endif
