@@ -13,11 +13,10 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links:
-    - https://pione.hatenablog.com/entry/2021/03/11/232159
-  bundledCode: "#line 1 \"graph/scc.hpp\"\n\n\n#include <algorithm>\n#include <unordered_map>\n\
-    #include <vector>\n\n#line 1 \"graph/graphTemplate.hpp\"\n\n\n#line 4 \"graph/graphTemplate.hpp\"\
-    \nusing namespace std;\n\ntemplate <typename T = int>\nstruct Edge {\n  int from,\
+    links: []
+  bundledCode: "#line 2 \"graph/scc.hpp\"\n#include <algorithm>\n#include <unordered_map>\n\
+    #include <vector>\n\n#line 3 \"graph/graphTemplate.hpp\"\n#include <iostream>\n\
+    using namespace std;\n\ntemplate <typename T = int>\nstruct Edge {\n  int from,\
     \ to;\n  T cost;\n  int idx;\n  Edge() = default;\n\n  Edge(int from, int to,\
     \ T cost = 1, int idx = -1)\n      : from(from), to(to), cost(cost), idx(idx)\
     \ {}\n  operator int() const { return to; }\n};\n\ntemplate <typename T = int>\n\
@@ -33,31 +32,27 @@ data:
     \ (directed) {\n        add_directed_edge(a, b, c);\n      } else {\n        add_edge(a,\
     \ b, c);\n      }\n    }\n  }\n  inline vector<Edge<T>> &operator[](const int\
     \ &k) { return g[k]; }\n\n  inline const vector<Edge<T>> &operator[](const int\
-    \ &k) const {\n    return g[k];\n  }\n};\n\n\n#line 8 \"graph/scc.hpp\"\nusing\
-    \ namespace std;\n// \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3 Strongly Connected\
-    \ Component\n// https://pione.hatenablog.com/entry/2021/03/11/232159\ntemplate\
-    \ <typename T = int>\nstruct SCC {\npublic:\n  int n;\n  Graph<T> G;\n  vector<int>\
-    \ component;\n  SCC(Graph<T> &_G) {\n    n = _G.size();\n    G = _G;\n    build();\n\
-    \  }\n\n  void build() {\n    rG = Graph(n);\n    for(size_t i =0;i<n;i++){\n\
-    \      for(auto &e: G[i]) {\n        rG.add_directed_edge(e.to, e.from, e.cost);\n\
-    \      }\n    }\n    component.assign(n, -1);\n    used.assign(n, false);\n  \
-    \  for (size_t v = 0; v < n; v++)\n      if (!used[v]) dfs(v);\n    reverse(order.begin(),\
-    \ order.end());\n    int k = 0;\n    for (auto v : order)\n      if (component[v]\
-    \ == -1) rdfs(v, k), k++;\n  }\n\n  bool is_same(int u, int v) { return component[u]\
-    \ == component[v]; }\n\n  long long count_pair() {\n    unordered_map<int, long\
-    \ long> value_counts;\n    for (int k : component) {\n      value_counts[k]++;\n\
-    \    }\n    long long ans = 0;\n    for (auto x : value_counts) {\n      ans +=\
-    \ x.second * (x.second - 1) / 2;\n    }\n    return ans;\n  }\n\nprivate:\n  Graph<T>\
-    \ rG;\n  vector<int> order;\n  vector<bool> used;\n\n  void dfs(int v) {\n   \
-    \ used[v] = 1;\n    for (auto nv : G[v]) {\n      if (!used[nv]) dfs(nv);\n  \
-    \  }\n    order.push_back(v);\n  }\n\n  void rdfs(int v, int k) {\n    component[v]\
-    \ = k;\n    for (auto nv : rG[v]) {\n      if (component[nv] < 0) rdfs(nv, k);\n\
-    \    }\n  }\n};\n\n"
-  code: "#ifndef SCC_HPP\n#define SCC_HPP\n#include <algorithm>\n#include <unordered_map>\n\
-    #include <vector>\n\n#include \"graph/graphTemplate.hpp\"\nusing namespace std;\n\
-    // \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3 Strongly Connected Component\n//\
-    \ https://pione.hatenablog.com/entry/2021/03/11/232159\ntemplate <typename T =\
-    \ int>\nstruct SCC {\npublic:\n  int n;\n  Graph<T> G;\n  vector<int> component;\n\
+    \ &k) const { return g[k]; }\n};\n\ntemplate <typename T>\nusing Edges = vector<Edge<T>>;\n\
+    #line 7 \"graph/scc.hpp\"\nusing namespace std;\n\ntemplate <typename T = int>\n\
+    struct SCC {\npublic:\n  int n;\n  Graph<T> G;\n  vector<int> component;\n  SCC(Graph<T>\
+    \ &_G) {\n    n = _G.size();\n    G = _G;\n    build();\n  }\n\n  void build()\
+    \ {\n    rG = Graph(n);\n    for(size_t i =0;i<n;i++){\n      for(auto &e: G[i])\
+    \ {\n        rG.add_directed_edge(e.to, e.from, e.cost);\n      }\n    }\n   \
+    \ component.assign(n, -1);\n    used.assign(n, false);\n    for (size_t v = 0;\
+    \ v < n; v++)\n      if (!used[v]) dfs(v);\n    reverse(order.begin(), order.end());\n\
+    \    int k = 0;\n    for (auto v : order)\n      if (component[v] == -1) rdfs(v,\
+    \ k), k++;\n  }\n\n  bool is_same(int u, int v) { return component[u] == component[v];\
+    \ }\n\n  long long count_pair() {\n    unordered_map<int, long long> value_counts;\n\
+    \    for (int k : component) {\n      value_counts[k]++;\n    }\n    long long\
+    \ ans = 0;\n    for (auto x : value_counts) {\n      ans += x.second * (x.second\
+    \ - 1) / 2;\n    }\n    return ans;\n  }\n\nprivate:\n  Graph<T> rG;\n  vector<int>\
+    \ order;\n  vector<bool> used;\n\n  void dfs(int v) {\n    used[v] = 1;\n    for\
+    \ (auto nv : G[v]) {\n      if (!used[nv]) dfs(nv);\n    }\n    order.push_back(v);\n\
+    \  }\n\n  void rdfs(int v, int k) {\n    component[v] = k;\n    for (auto nv :\
+    \ rG[v]) {\n      if (component[nv] < 0) rdfs(nv, k);\n    }\n  }\n};\n"
+  code: "#pragma once\n#include <algorithm>\n#include <unordered_map>\n#include <vector>\n\
+    \n#include \"graph/graphTemplate.hpp\"\nusing namespace std;\n\ntemplate <typename\
+    \ T = int>\nstruct SCC {\npublic:\n  int n;\n  Graph<T> G;\n  vector<int> component;\n\
     \  SCC(Graph<T> &_G) {\n    n = _G.size();\n    G = _G;\n    build();\n  }\n\n\
     \  void build() {\n    rG = Graph(n);\n    for(size_t i =0;i<n;i++){\n      for(auto\
     \ &e: G[i]) {\n        rG.add_directed_edge(e.to, e.from, e.cost);\n      }\n\
@@ -73,13 +68,13 @@ data:
     \ used[v] = 1;\n    for (auto nv : G[v]) {\n      if (!used[nv]) dfs(nv);\n  \
     \  }\n    order.push_back(v);\n  }\n\n  void rdfs(int v, int k) {\n    component[v]\
     \ = k;\n    for (auto nv : rG[v]) {\n      if (component[nv] < 0) rdfs(nv, k);\n\
-    \    }\n  }\n};\n#endif"
+    \    }\n  }\n};"
   dependsOn:
   - graph/graphTemplate.hpp
   isVerificationFile: false
   path: graph/scc.hpp
   requiredBy: []
-  timestamp: '2022-07-06 17:28:21+09:00'
+  timestamp: '2022-07-07 14:50:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/scc.aoj_GRL_3_C.test.cpp

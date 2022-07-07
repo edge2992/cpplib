@@ -20,7 +20,7 @@ data:
   bundledCode: "#line 1 \"test/union_find.aoj.test.cpp\"\n#define PROBLEM \\\n  \"\
     https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A\"\n#include\
     \ <iostream>\n\n#line 2 \"macros.hpp\"\n#define rep(i, n) for (int i = 0; i <\
-    \ (n); i++)\n#line 1 \"structure/unionFind.hpp\"\n\n\n#include <algorithm>\n#include\
+    \ (n); i++)\n#line 2 \"structure/unionFind.hpp\"\n#include <algorithm>\n#include\
     \ <vector>\n\nstruct UnionFind {\n  std::vector<int> data;\n  UnionFind() = default;\n\
     \n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int a, int\
     \ b) {\n    a = find(a);\n    b = find(b);\n    if (a == b) return false;\n  \
@@ -32,7 +32,7 @@ data:
     \ ret(n);\n    for (int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n\
     \    }\n    ret.erase(std::remove_if(std::begin(ret), std::end(ret),\n       \
     \                 [&](const std::vector<int>& v) { return v.empty(); }),\n   \
-    \           std::end(ret));\n    return ret;\n  }\n};\n\n#line 7 \"test/union_find.aoj.test.cpp\"\
+    \           std::end(ret));\n    return ret;\n  }\n};\n#line 7 \"test/union_find.aoj.test.cpp\"\
     \nusing namespace std;\n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  UnionFind\
     \ uf(n);\n  rep(i, q) {\n    int com, x, y;\n    cin >> com >> x >> y;\n    if\
     \ (com == 0) {\n      uf.unite(x, y);\n    } else if (com == 1) {\n      cout\
@@ -49,7 +49,7 @@ data:
   isVerificationFile: true
   path: test/union_find.aoj.test.cpp
   requiredBy: []
-  timestamp: '2022-07-06 09:19:51+09:00'
+  timestamp: '2022-07-06 23:37:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/union_find.aoj.test.cpp

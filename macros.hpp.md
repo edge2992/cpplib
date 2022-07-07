@@ -7,6 +7,9 @@ data:
     path: test/graph/dijkstra.aoj_GRL_1_A.test.cpp
     title: test/graph/dijkstra.aoj_GRL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
+    title: test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/lca.aoj_GRL_5_C.test.cpp
     title: test/graph/lca.aoj_GRL_5_C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -37,6 +40,7 @@ data:
   verifiedWith:
   - test/union_find.aoj.test.cpp
   - test/graph/scc.aoj_GRL_3_C.test.cpp
+  - test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
   - test/graph/dijkstra.aoj_GRL_1_A.test.cpp
   - test/graph/lca.aoj_GRL_5_C.test.cpp
 documentation_of: macros.hpp

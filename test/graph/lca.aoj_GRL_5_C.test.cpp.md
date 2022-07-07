@@ -19,7 +19,7 @@ data:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C
   bundledCode: "#line 1 \"test/graph/lca.aoj_GRL_5_C.test.cpp\"\n#define PROBLEM \"\
     https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C\"\n\n#include<iostream>\n\
-    #line 1 \"graph/lca.hpp\"\n\n\n#include<vector>\nusing namespace std;\nusing Graph\
+    #line 2 \"graph/lca.hpp\"\n#include<vector>\nusing namespace std;\nusing Graph\
     \ = vector<vector<int>>;\n\nstruct LCA{\n  vector<vector<int>> parent;\n  vector<int>\
     \ dist;\n  LCA(const Graph &G, int root=0){ init(G, root);}\n\n  void init(const\
     \ Graph &G, int root=0){\n    int V = G.size();\n    int K = 1;\n    while((1<<K)\
@@ -37,9 +37,9 @@ data:
     \ k--){\n      if(parent[k][u] != parent[k][v]){\n        u = parent[k][u];\n\
     \        v = parent[k][v];\n      }\n    }\n    return parent[0][u];\n  }\n\n\
     \  int get_dist(int u, int v){\n    int p = query(u, v);\n    return dist[u] +\
-    \ dist[v] - 2 * dist[p];\n  }\n};\n\n#line 2 \"macros.hpp\"\n#define rep(i, n)\
-    \ for (int i = 0; i < (n); i++)\n#line 6 \"test/graph/lca.aoj_GRL_5_C.test.cpp\"\
-    \n\nint main(){\n    int N, Q;\n    cin >> N;\n    Graph G(N);\n    rep(i, N){\n\
+    \ dist[v] - 2 * dist[p];\n  }\n};\n#line 2 \"macros.hpp\"\n#define rep(i, n) for\
+    \ (int i = 0; i < (n); i++)\n#line 6 \"test/graph/lca.aoj_GRL_5_C.test.cpp\"\n\
+    \nint main(){\n    int N, Q;\n    cin >> N;\n    Graph G(N);\n    rep(i, N){\n\
     \        int K, c;\n        cin >> K;\n        rep(j, K){\n            cin >>\
     \ c;\n            G[i].push_back(c);\n            G[c].push_back(i);\n       \
     \ }\n    }\n    LCA lca(G);\n    cin >> Q;\n    rep(i, Q){\n        int u, v;\n\
@@ -57,7 +57,7 @@ data:
   isVerificationFile: true
   path: test/graph/lca.aoj_GRL_5_C.test.cpp
   requiredBy: []
-  timestamp: '2022-07-06 11:46:46+09:00'
+  timestamp: '2022-07-06 23:37:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/lca.aoj_GRL_5_C.test.cpp
