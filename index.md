@@ -18,6 +18,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/scc.hpp
       title: SCC (Sstrongly Connected Components)
+    - icon: ':heavy_check_mark:'
+      path: graph/warshallFloyd.hpp
+      title: "Warshall Floyd (\u5168\u9802\u70B9\u5BFE\u6700\u77ED\u7D4C\u8DEF)"
   - name: .
     pages:
     - icon: ':heavy_check_mark:'
@@ -72,6 +75,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/scc.aoj_GRL_3_C.test.cpp
       title: test/graph/scc.aoj_GRL_3_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/warshallFloyd.aoj_GRL_1_C.test.cpp
+      title: test/graph/warshallFloyd.aoj_GRL_1_C.test.cpp
   - name: test/segmentTree
     pages:
     - icon: ':heavy_check_mark:'
