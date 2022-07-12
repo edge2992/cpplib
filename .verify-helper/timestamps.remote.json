@@ -5,6 +5,7 @@
 "test/graph/kruskal.aoj_ALDS1_12_A.test.cpp": "2022-07-07 14:50:02 +0900",
 "test/graph/lca.aoj_GRL_5_C.test.cpp": "2022-07-06 23:37:31 +0900",
 "test/graph/scc.aoj_GRL_3_C.test.cpp": "2022-07-07 14:50:02 +0900",
+"test/graph/warshallFloyd.aoj_GRL_1_C.test.cpp": "2022-07-12 12:30:29 +0900",
 "test/modint_pow.aoj_DPL_5_A.test.cpp": "2022-07-06 23:37:31 +0900",
 "test/segmentTree/rangeMin.aoj_DSL_2_A.test.cpp": "2022-07-06 23:37:31 +0900",
 "test/union_find.aoj.test.cpp": "2022-07-06 23:37:31 +0900"
