@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
 
 #include <iostream>
-#include "structure/BIT.hpp"
+#include "structure/bit.hpp"
 
 int main(){
     int N, Q;
