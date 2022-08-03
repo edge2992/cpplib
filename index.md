@@ -42,8 +42,8 @@ data:
   - name: structure
     pages:
     - icon: ':heavy_check_mark:'
-      path: structure/BIT.hpp
-      title: structure/BIT.hpp
+      path: structure/bit.hpp
+      title: BIT (Binary Indexed Tree)
     - icon: ':heavy_check_mark:'
       path: structure/unionFind.hpp
       title: Union Find
