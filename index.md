@@ -42,6 +42,9 @@ data:
   - name: structure
     pages:
     - icon: ':heavy_check_mark:'
+      path: structure/BIT.hpp
+      title: structure/BIT.hpp
+    - icon: ':heavy_check_mark:'
       path: structure/unionFind.hpp
       title: Union Find
   verificationCategories:
@@ -83,5 +86,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segmentTree/rangeMin.aoj_DSL_2_A.test.cpp
       title: test/segmentTree/rangeMin.aoj_DSL_2_A.test.cpp
+  - name: test/structure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/structure/BIT.aoj_DSL_2_B.test.cpp
+      title: test/structure/BIT.aoj_DSL_2_B.test.cpp
 layout: toppage
 ---
