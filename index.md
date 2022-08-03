@@ -31,6 +31,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/comb.hpp
       title: "combination mod \u7D44\u307F\u5408\u308F\u305B"
+    - icon: ':warning:'
+      path: math/matrix.hpp
+      title: "Matrix (\u884C\u5217)"
     - icon: ':heavy_check_mark:'
       path: math/mint.hpp
       title: mod int
