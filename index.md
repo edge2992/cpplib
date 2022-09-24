@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: "Dijkstra (\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF)"
+    - icon: ':warning:'
+      path: graph/fordFulkerson.hpp
+      title: Ford Fulkerson (maximum flow)
     - icon: ':heavy_check_mark:'
       path: graph/graphTemplate.hpp
       title: graph/graphTemplate.hpp
@@ -50,6 +53,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: structure/unionFind.hpp
       title: Union Find
+  - name: test/graph
+    pages:
+    - icon: ':warning:'
+      path: test/graph/fordFulkerson.aoj_GRL_6_A.tests.cpp
+      title: test/graph/fordFulkerson.aoj_GRL_6_A.tests.cpp
   verificationCategories:
   - name: .
     pages:
