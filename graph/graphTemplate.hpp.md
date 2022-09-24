@@ -66,15 +66,15 @@ data:
   isVerificationFile: false
   path: graph/graphTemplate.hpp
   requiredBy:
-  - graph/scc.hpp
   - graph/kruskal.hpp
   - graph/dijkstra.hpp
+  - graph/scc.hpp
   timestamp: '2022-07-07 14:50:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
   - test/graph/scc.aoj_GRL_3_C.test.cpp
   - test/graph/dijkstra.aoj_GRL_1_A.test.cpp
+  - test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
 documentation_of: graph/graphTemplate.hpp
 layout: document
 redirect_from:

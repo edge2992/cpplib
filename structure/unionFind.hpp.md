@@ -51,8 +51,8 @@ data:
   timestamp: '2022-07-06 23:37:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/union_find.aoj.test.cpp
   - test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
+  - test/union_find.aoj.test.cpp
 documentation_of: structure/unionFind.hpp
 layout: document
 title: Union Find

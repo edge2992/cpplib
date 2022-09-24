@@ -57,8 +57,8 @@ data:
   timestamp: '2022-07-06 23:37:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/comb.aoj_DPL_5_E.test.cpp
   - test/modint_pow.aoj_DPL_5_A.test.cpp
+  - test/comb.aoj_DPL_5_E.test.cpp
 documentation_of: math/mint.hpp
 layout: document
 title: mod int
