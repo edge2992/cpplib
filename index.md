@@ -53,6 +53,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: structure/unionFind.hpp
       title: Union Find
+    - icon: ':heavy_check_mark:'
+      path: structure/weightedUnionFind.hpp
+      title: Weighted Union Find
   verificationCategories:
   - name: .
     pages:
@@ -100,5 +103,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/structure/BIT.aoj_DSL_2_B.test.cpp
       title: test/structure/BIT.aoj_DSL_2_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/structure/weighted_union_find.aoj_V13_1330.test.cpp
+      title: test/structure/weighted_union_find.aoj_V13_1330.test.cpp
 layout: toppage
 ---
