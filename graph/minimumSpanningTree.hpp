@@ -11,7 +11,7 @@ struct MinimumSpanningTree {
 template <typename T>
 MinimumSpanningTree<T> kruskal(Edges<T> &edges, int V) {
   sort(begin(edges), end(edges),
-       [](const Edge<T> &a, const Edge<T> &b) { return a.cost > b.cost; });
+       [](const Edge<T> &a, const Edge<T> &b) { return a.cost < b.cost; });
   UnionFind uf(V);
   T total = T();
   Edges<T> es;
