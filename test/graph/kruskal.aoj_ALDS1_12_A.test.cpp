@@ -1,7 +1,8 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_12_A"
 
 #include <iostream>
-#include "graph/kruskal.hpp"
+
+#include "graph/minimumSpanningTree.hpp"
 #include "macros.hpp"
 using namespace std;
 
@@ -16,6 +17,6 @@ int main() {
       if (c != -1) edges.emplace_back(i, j, c);
     }
   }
-  MinimumSpaningTree<long long> mst = kruskal(edges, N);
+  MinimumSpanningTree<long long> mst = kruskal(edges, N);
   cout << mst.cost << endl;
 }

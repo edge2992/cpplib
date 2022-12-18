@@ -3,13 +3,13 @@
 #include "structure/unionFind.hpp"
 
 template <typename T>
-struct MinimumSpaningTree {
+struct MinimumSpanningTree {
   T cost;
   Edges<T> edges;
 };
 
 template <typename T>
-MinimumSpaningTree<T> kruskal(Edges<T> &edges, int V) {
+MinimumSpanningTree<T> kruskal(Edges<T> &edges, int V) {
   sort(begin(edges), end(edges),
        [](const Edge<T> &a, const Edge<T> &b) { return a.cost < b.cost; });
   UnionFind uf(V);

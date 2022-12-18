@@ -1,6 +1,6 @@
 ---
-title: Kruskal (最小全域木)
-documentation_of: graph/kruskal.hpp
+title: Minimum Spanning Tree (Kruskal)
+documentation_of: graph/maximumSpanningTree.hpp
 ---
 
 ## 概要
