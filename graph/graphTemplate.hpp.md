@@ -5,9 +5,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: "Dijkstra (\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF)"
+  - icon: ':warning:'
+    path: graph/maximumSpanningTree.hpp
+    title: Minimum Spanning Tree (Kruskal)
   - icon: ':heavy_check_mark:'
-    path: graph/kruskal.hpp
-    title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728)"
+    path: graph/minimumSpanningTree.hpp
+    title: graph/minimumSpanningTree.hpp
   - icon: ':heavy_check_mark:'
     path: graph/scc.hpp
     title: SCC (Sstrongly Connected Components)
@@ -66,15 +69,16 @@ data:
   isVerificationFile: false
   path: graph/graphTemplate.hpp
   requiredBy:
+  - graph/minimumSpanningTree.hpp
   - graph/scc.hpp
   - graph/dijkstra.hpp
-  - graph/kruskal.hpp
+  - graph/maximumSpanningTree.hpp
   timestamp: '2022-07-07 14:50:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
   - test/graph/dijkstra.aoj_GRL_1_A.test.cpp
   - test/graph/scc.aoj_GRL_3_C.test.cpp
+  - test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
 documentation_of: graph/graphTemplate.hpp
 layout: document
 redirect_from:

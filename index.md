@@ -13,11 +13,14 @@ data:
       path: graph/graphTemplate.hpp
       title: graph/graphTemplate.hpp
     - icon: ':heavy_check_mark:'
-      path: graph/kruskal.hpp
-      title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728)"
-    - icon: ':heavy_check_mark:'
       path: graph/lca.hpp
       title: LCA (Lowerst Common Ancestor)
+    - icon: ':warning:'
+      path: graph/maximumSpanningTree.hpp
+      title: Minimum Spanning Tree (Kruskal)
+    - icon: ':heavy_check_mark:'
+      path: graph/minimumSpanningTree.hpp
+      title: graph/minimumSpanningTree.hpp
     - icon: ':heavy_check_mark:'
       path: graph/scc.hpp
       title: SCC (Sstrongly Connected Components)

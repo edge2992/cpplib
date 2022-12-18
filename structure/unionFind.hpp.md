@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
+  - icon: ':warning:'
+    path: graph/maximumSpanningTree.hpp
+    title: Minimum Spanning Tree (Kruskal)
   - icon: ':heavy_check_mark:'
-    path: graph/kruskal.hpp
-    title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728)"
+    path: graph/minimumSpanningTree.hpp
+    title: graph/minimumSpanningTree.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
@@ -47,12 +50,13 @@ data:
   isVerificationFile: false
   path: structure/unionFind.hpp
   requiredBy:
-  - graph/kruskal.hpp
+  - graph/minimumSpanningTree.hpp
+  - graph/maximumSpanningTree.hpp
   timestamp: '2022-07-06 23:37:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/union_find.aoj.test.cpp
   - test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
+  - test/union_find.aoj.test.cpp
 documentation_of: structure/unionFind.hpp
 layout: document
 title: Union Find

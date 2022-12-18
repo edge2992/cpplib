@@ -5,28 +5,17 @@ data:
     path: graph/graphTemplate.hpp
     title: graph/graphTemplate.hpp
   - icon: ':heavy_check_mark:'
-    path: graph/minimumSpanningTree.hpp
-    title: graph/minimumSpanningTree.hpp
-  - icon: ':heavy_check_mark:'
-    path: macros.hpp
-    title: macros.hpp
-  - icon: ':heavy_check_mark:'
     path: structure/unionFind.hpp
     title: Union Find
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _pathExtension: hpp
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_12_A
-    links:
-    - https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_12_A
-  bundledCode: "#line 1 \"test/graph/kruskal.aoj_ALDS1_12_A.test.cpp\"\n#define PROBLEM\
-    \ \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_12_A\"\n\n#include <iostream>\n\
-    \n#line 2 \"graph/graphTemplate.hpp\"\n#include <vector>\n#line 4 \"graph/graphTemplate.hpp\"\
-    \nusing namespace std;\n\ntemplate <typename T = int>\nstruct Edge {\n  int from,\
+    links: []
+  bundledCode: "#line 2 \"graph/graphTemplate.hpp\"\n#include <vector>\n#include <iostream>\n\
+    using namespace std;\n\ntemplate <typename T = int>\nstruct Edge {\n  int from,\
     \ to;\n  T cost;\n  int idx;\n  Edge() = default;\n\n  Edge(int from, int to,\
     \ T cost = 1, int idx = -1)\n      : from(from), to(to), cost(cost), idx(idx)\
     \ {}\n  operator int() const { return to; }\n};\n\ntemplate <typename T = int>\n\
@@ -55,41 +44,49 @@ data:
     \ ret(n);\n    for (int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n\
     \    }\n    ret.erase(std::remove_if(std::begin(ret), std::end(ret),\n       \
     \                 [&](const std::vector<int>& v) { return v.empty(); }),\n   \
-    \           std::end(ret));\n    return ret;\n  }\n};\n#line 4 \"graph/minimumSpanningTree.hpp\"\
+    \           std::end(ret));\n    return ret;\n  }\n};\n#line 4 \"graph/maximumSpanningTree.hpp\"\
     \n\ntemplate <typename T>\nstruct MinimumSpanningTree {\n  T cost;\n  Edges<T>\
     \ edges;\n};\n\ntemplate <typename T>\nMinimumSpanningTree<T> kruskal(Edges<T>\
     \ &edges, int V) {\n  sort(begin(edges), end(edges),\n       [](const Edge<T>\
     \ &a, const Edge<T> &b) { return a.cost < b.cost; });\n  UnionFind uf(V);\n  T\
     \ total = T();\n  Edges<T> es;\n  for (auto &e : edges) {\n    if (uf.unite(e.from,\
     \ e.to)) {\n      es.emplace_back(e);\n      total += e.cost;\n    }\n  }\n  return\
-    \ {total, es};\n}\n#line 2 \"macros.hpp\"\n#define rep(i, n) for (int i = 0; i\
-    \ < (n); i++)\n#line 7 \"test/graph/kruskal.aoj_ALDS1_12_A.test.cpp\"\nusing namespace\
-    \ std;\n\nint main() {\n  int N;\n  long long c;\n  cin >> N;\n  Edges<long long>\
-    \ edges;\n  rep(i, N) {\n    rep(j, N) {\n      cin >> c;\n      if (c != -1)\
-    \ edges.emplace_back(i, j, c);\n    }\n  }\n  MinimumSpanningTree<long long> mst\
-    \ = kruskal(edges, N);\n  cout << mst.cost << endl;\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_12_A\"\n\
-    \n#include <iostream>\n\n#include \"graph/minimumSpanningTree.hpp\"\n#include\
-    \ \"macros.hpp\"\nusing namespace std;\n\nint main() {\n  int N;\n  long long\
-    \ c;\n  cin >> N;\n  Edges<long long> edges;\n  rep(i, N) {\n    rep(j, N) {\n\
-    \      cin >> c;\n      if (c != -1) edges.emplace_back(i, j, c);\n    }\n  }\n\
-    \  MinimumSpanningTree<long long> mst = kruskal(edges, N);\n  cout << mst.cost\
-    \ << endl;\n}"
+    \ {total, es};\n}\n"
+  code: "#pragma once\n#include \"graph/graphTemplate.hpp\"\n#include \"structure/unionFind.hpp\"\
+    \n\ntemplate <typename T>\nstruct MinimumSpanningTree {\n  T cost;\n  Edges<T>\
+    \ edges;\n};\n\ntemplate <typename T>\nMinimumSpanningTree<T> kruskal(Edges<T>\
+    \ &edges, int V) {\n  sort(begin(edges), end(edges),\n       [](const Edge<T>\
+    \ &a, const Edge<T> &b) { return a.cost < b.cost; });\n  UnionFind uf(V);\n  T\
+    \ total = T();\n  Edges<T> es;\n  for (auto &e : edges) {\n    if (uf.unite(e.from,\
+    \ e.to)) {\n      es.emplace_back(e);\n      total += e.cost;\n    }\n  }\n  return\
+    \ {total, es};\n}"
   dependsOn:
-  - graph/minimumSpanningTree.hpp
   - graph/graphTemplate.hpp
   - structure/unionFind.hpp
-  - macros.hpp
-  isVerificationFile: true
-  path: test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
+  isVerificationFile: false
+  path: graph/maximumSpanningTree.hpp
   requiredBy: []
-  timestamp: '2022-12-17 23:55:47+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-12-17 23:33:29+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
+documentation_of: graph/maximumSpanningTree.hpp
 layout: document
-redirect_from:
-- /verify/test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
-- /verify/test/graph/kruskal.aoj_ALDS1_12_A.test.cpp.html
-title: test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
+title: Minimum Spanning Tree (Kruskal)
 ---
+
+## 概要
+
+- 最小全域木を求めるアルゴリズム。
+- $ O(E \log V)$
+- 辺のソートに一番時間がかかる。
+- あとは全ての辺を一度見るだけ。
+
+## 実装のヒント
+
+- 辺を小さい順に追加していく
+- 閉路ができなければその辺は最小全域木の辺となる。
+- 閉路の確認をUnion Find木で行う。
+
+## 参考
+
+- [Luzhiled's Library](https://ei1333.github.io/library/graph/mst/kruskal.hpp)

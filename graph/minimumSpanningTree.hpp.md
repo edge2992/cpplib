@@ -47,17 +47,17 @@ data:
     \ ret(n);\n    for (int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n\
     \    }\n    ret.erase(std::remove_if(std::begin(ret), std::end(ret),\n       \
     \                 [&](const std::vector<int>& v) { return v.empty(); }),\n   \
-    \           std::end(ret));\n    return ret;\n  }\n};\n#line 4 \"graph/kruskal.hpp\"\
-    \n\ntemplate <typename T>\nstruct MinimumSpaningTree {\n  T cost;\n  Edges<T>\
-    \ edges;\n};\n\ntemplate <typename T>\nMinimumSpaningTree<T> kruskal(Edges<T>\
+    \           std::end(ret));\n    return ret;\n  }\n};\n#line 4 \"graph/minimumSpanningTree.hpp\"\
+    \n\ntemplate <typename T>\nstruct MinimumSpanningTree {\n  T cost;\n  Edges<T>\
+    \ edges;\n};\n\ntemplate <typename T>\nMinimumSpanningTree<T> kruskal(Edges<T>\
     \ &edges, int V) {\n  sort(begin(edges), end(edges),\n       [](const Edge<T>\
     \ &a, const Edge<T> &b) { return a.cost < b.cost; });\n  UnionFind uf(V);\n  T\
     \ total = T();\n  Edges<T> es;\n  for (auto &e : edges) {\n    if (uf.unite(e.from,\
     \ e.to)) {\n      es.emplace_back(e);\n      total += e.cost;\n    }\n  }\n  return\
     \ {total, es};\n}\n"
   code: "#pragma once\n#include \"graph/graphTemplate.hpp\"\n#include \"structure/unionFind.hpp\"\
-    \n\ntemplate <typename T>\nstruct MinimumSpaningTree {\n  T cost;\n  Edges<T>\
-    \ edges;\n};\n\ntemplate <typename T>\nMinimumSpaningTree<T> kruskal(Edges<T>\
+    \n\ntemplate <typename T>\nstruct MinimumSpanningTree {\n  T cost;\n  Edges<T>\
+    \ edges;\n};\n\ntemplate <typename T>\nMinimumSpanningTree<T> kruskal(Edges<T>\
     \ &edges, int V) {\n  sort(begin(edges), end(edges),\n       [](const Edge<T>\
     \ &a, const Edge<T> &b) { return a.cost < b.cost; });\n  UnionFind uf(V);\n  T\
     \ total = T();\n  Edges<T> es;\n  for (auto &e : edges) {\n    if (uf.unite(e.from,\
@@ -67,30 +67,16 @@ data:
   - graph/graphTemplate.hpp
   - structure/unionFind.hpp
   isVerificationFile: false
-  path: graph/kruskal.hpp
+  path: graph/minimumSpanningTree.hpp
   requiredBy: []
-  timestamp: '2022-07-07 14:50:02+09:00'
+  timestamp: '2022-12-17 23:55:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/kruskal.aoj_ALDS1_12_A.test.cpp
-documentation_of: graph/kruskal.hpp
+documentation_of: graph/minimumSpanningTree.hpp
 layout: document
-title: "Kruskal (\u6700\u5C0F\u5168\u57DF\u6728)"
+redirect_from:
+- /library/graph/minimumSpanningTree.hpp
+- /library/graph/minimumSpanningTree.hpp.html
+title: graph/minimumSpanningTree.hpp
 ---
-
-## 概要
-
-- 最小全域木を求めるアルゴリズム。
-- $ O(E \log V)$
-- 辺のソートに一番時間がかかる。
-- あとは全ての辺を一度見るだけ。
-
-## 実装のヒント
-
-- 辺を小さい順に追加していく
-- 閉路ができなければその辺は最小全域木の辺となる。
-- 閉路の確認をUnion Find木で行う。
-
-## 参考
-
-- [Luzhiled's Library](https://ei1333.github.io/library/graph/mst/kruskal.hpp)
